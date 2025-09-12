@@ -1,0 +1,79 @@
+{
+  "app": {
+    "title": "Digital Mental Health Support",
+    "welcome": "Welcome to your mental health companion",
+    "tagline": "Track your mood, journal your thoughts, and discover insights about your mental well-being."
+  },
+  "welcome": {
+    "title": "Welcome",
+    "subtitle": "Your Mental Health Companion",
+    "description": "Track your mood, journal your thoughts, and discover insights about your mental well-being.",
+    "continue": "Continue",
+    "skip": "Skip"
+  },
+  "mood": {
+    "title": "Mood Tracker",
+    "how_feeling": "How are you feeling today?",
+    "select_mood": "Select your current mood",
+    "happy": "Happy",
+    "neutral": "Neutral",
+    "sad": "Sad",
+    "angry": "Angry",
+    "tired": "Tired",
+    "add_note": "Add a note (optional)",
+    "note_hint": "What's contributing to this mood?",
+    "save": "Save Mood",
+    "update_entry": "Update Entry",
+    "saved": "Mood saved successfully!",
+    "error": "Failed to save mood"
+  },
+  "journal": {
+    "title": "Journal",
+    "new_entry": "New Entry",
+    "edit_entry": "Edit Entry",
+    "search_hint": "Search entries...",
+    "add_tag": "Add tag",
+    "content_hint": "What's on your mind today?",
+    "entry_created": "Journal entry created successfully!",
+    "entry_updated": "Journal entry updated successfully!",
+    "entry_deleted": "Journal entry deleted successfully!",
+    "error": "Failed to save journal entry"
+  },
+  "analytics": {
+    "title": "Analytics",
+    "weekly": "Weekly",
+    "monthly": "Monthly",
+    "weekly_average": "Weekly Average",
+    "monthly_average": "Monthly Average",
+    "current_streak": "Current Streak",
+    "longest_streak": "Longest Streak",
+    "days": "days",
+    "weekly_trend": "Weekly Trend",
+    "monthly_trend": "Monthly Trend",
+    "mood_distribution": "Mood Distribution",
+    "insights": "AI Insights",
+    "no_data": "No Data Available",
+    "no_data_description": "Start tracking your mood and journaling to see your analytics.",
+    "error": "Failed to load analytics"
+  },
+  "common": {
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "save": "Save",
+    "edit": "Edit",
+    "add": "Add",
+    "search": "Search",
+    "filter": "Filter",
+    "clear": "Clear",
+    "done": "Done",
+    "continue": "Continue",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "warning": "Warning",
+    "info": "Info"
+  }
+}
