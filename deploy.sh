@@ -1,24 +1,44 @@
 #!/bin/bash
 
-# SIH 2025 Flutter App Deployment Script
-echo "🚀 Starting deployment for SIH 2025 Demo..."
+# Digital Mental Health App - Deployment Script
+# This script builds and deploys the Flutter web app
 
-# Clean previous builds
-echo "🧹 Cleaning previous builds..."
+echo "🌸 Digital Mental Health App - Deployment Script"
+echo "================================================"
+
+# Check if Flutter is installed
+if ! command -v flutter &> /dev/null; then
+    echo "❌ Flutter is not installed. Please install Flutter first."
+    exit 1
+fi
+
+# Check if Firebase CLI is installed
+if ! command -v firebase &> /dev/null; then
+    echo "❌ Firebase CLI is not installed. Installing..."
+    npm install -g firebase-tools
+fi
+
+echo "🔧 Building Flutter web app..."
 flutter clean
-
-# Get dependencies
-echo "📦 Getting dependencies..."
 flutter pub get
+flutter build web --release
 
-# Build for web
-echo "🔨 Building Flutter web app..."
-flutter build web --release --web-renderer canvaskit
+if [ $? -eq 0 ]; then
+    echo "✅ Build successful!"
+else
+    echo "❌ Build failed!"
+    exit 1
+fi
 
-# Deploy to Firebase
 echo "🚀 Deploying to Firebase Hosting..."
 firebase deploy --only hosting
 
-echo "✅ Deployment complete!"
-echo "🌐 Your app is live at: https://your-project-id.web.app"
-echo "📱 Demo ready for SIH 2025!"
+if [ $? -eq 0 ]; then
+    echo "✅ Deployment successful!"
+    echo "🌐 Your app is now live at: https://your-project-id.web.app"
+else
+    echo "❌ Deployment failed!"
+    exit 1
+fi
+
+echo "🎉 Deployment complete!"
