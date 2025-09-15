@@ -90,6 +90,8 @@ class _LoginScreenState extends State<LoginScreen>
                     const SizedBox(height: 30),
                     _buildToggleAuth(),
                     const SizedBox(height: 20),
+                    _buildGoogleSignIn(),
+                    const SizedBox(height: 16),
                     _buildAnonymousSignIn(),
                   ],
                 ),
@@ -301,13 +303,42 @@ class _LoginScreenState extends State<LoginScreen>
     );
   }
 
+  Widget _buildGoogleSignIn() {
+    return Consumer<AuthService>(
+      builder: (context, authService, child) {
+        return SizedBox(
+          width: double.infinity,
+          height: 50,
+          child: OutlinedButton.icon(
+            onPressed: authService.isLoading ? null : _handleGoogleSignIn,
+            style: OutlinedButton.styleFrom(
+              foregroundColor: Colors.white,
+              side: const BorderSide(color: Colors.white),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
+            ),
+            icon: const Icon(Icons.login, color: Colors.white),
+            label: Text(
+              'Sign in with Google',
+              style: GoogleFonts.inter(
+                fontSize: 16,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+          ),
+        );
+      },
+    );
+  }
+
   Widget _buildAnonymousSignIn() {
     return Consumer<AuthService>(
       builder: (context, authService, child) {
         return SizedBox(
           width: double.infinity,
           height: 50,
-          child: OutlinedButton(
+          child: OutlinedButton.icon(
             onPressed: authService.isLoading ? null : _handleAnonymousSignIn,
             style: OutlinedButton.styleFrom(
               foregroundColor: Colors.white,
@@ -316,7 +347,8 @@ class _LoginScreenState extends State<LoginScreen>
                 borderRadius: BorderRadius.circular(12),
               ),
             ),
-            child: Text(
+            icon: const Icon(Icons.person_outline, color: Colors.white),
+            label: Text(
               'Continue as Guest',
               style: GoogleFonts.inter(
                 fontSize: 16,
@@ -352,6 +384,49 @@ class _LoginScreenState extends State<LoginScreen>
           SnackBar(
             content: Text(
               _isSignUp ? 'Account created successfully!' : 'Welcome back!',
+              style: GoogleFonts.inter(),
+            ),
+            backgroundColor: Theme.of(context).colorScheme.primary,
+          ),
+        );
+      }
+    } on FirebaseAuthException catch (e) {
+      if (mounted) {
+        String errorMessage = _getErrorMessage(e.code);
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(
+              errorMessage,
+              style: GoogleFonts.inter(),
+            ),
+            backgroundColor: Colors.red,
+          ),
+        );
+      }
+    } catch (e) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(
+              'Error: ${e.toString()}',
+              style: GoogleFonts.inter(),
+            ),
+            backgroundColor: Colors.red,
+          ),
+        );
+      }
+    }
+  }
+
+  Future<void> _handleGoogleSignIn() async {
+    try {
+      final user = await context.read<AuthService>().signInWithGoogle();
+      
+      if (user != null && mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(
+              'Welcome, ${user.displayName ?? user.email}!',
               style: GoogleFonts.inter(),
             ),
             backgroundColor: Theme.of(context).colorScheme.primary,

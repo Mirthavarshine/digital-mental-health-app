@@ -29,39 +29,40 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyDemoKeyForMentalHealthApp',
-    appId: '1:123456789:web:mentalhealthdemo',
-    messagingSenderId: '123456789',
-    projectId: 'mental-health-support-demo',
-    authDomain: 'mental-health-support-demo.firebaseapp.com',
-    storageBucket: 'mental-health-support-demo.appspot.com',
+    apiKey: 'AIzaSyCvCgJ_6zIO26m0tpbNAsoNWjing7ohWm0',
+    appId: '1:764795321038:web:635f07a08236cb9452ae9f',
+    messagingSenderId: '764795321038',
+    projectId: 'digitalmentalhealthapp',
+    authDomain: 'digitalmentalhealthapp.firebaseapp.com',
+    storageBucket: 'digitalmentalhealthapp.firebasestorage.app',
+    measurementId: 'G-GE4P0CE9DQ',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDemoKeyForMentalHealthApp',
-    appId: '1:123456789:android:mentalhealthdemo',
-    messagingSenderId: '123456789',
-    projectId: 'mental-health-support-demo',
+    apiKey: 'AIzaSyCvCgJ_6zIO26m0tpbNAsoNWjing7ohWm0',
+    appId: '1:764795321038:android:635f07a08236cb9452ae9f',
+    messagingSenderId: '764795321038',
+    projectId: 'digitalmentalhealthapp',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDemoKeyForMentalHealthApp',
-    appId: '1:123456789:ios:mentalhealthdemo',
-    messagingSenderId: '123456789',
-    projectId: 'mental-health-support-demo',
+    apiKey: 'AIzaSyCvCgJ_6zIO26m0tpbNAsoNWjing7ohWm0',
+    appId: '1:764795321038:ios:635f07a08236cb9452ae9f',
+    messagingSenderId: '764795321038',
+    projectId: 'digitalmentalhealthapp',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyDemoKeyForMentalHealthApp',
-    appId: '1:123456789:ios:mentalhealthdemo',
-    messagingSenderId: '123456789',
-    projectId: 'mental-health-support-demo',
+    apiKey: 'AIzaSyCvCgJ_6zIO26m0tpbNAsoNWjing7ohWm0',
+    appId: '1:764795321038:ios:635f07a08236cb9452ae9f',
+    messagingSenderId: '764795321038',
+    projectId: 'digitalmentalhealthapp',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyDemoKeyForMentalHealthApp',
-    appId: '1:123456789:web:mentalhealthdemo',
-    messagingSenderId: '123456789',
-    projectId: 'mental-health-support-demo',
+    apiKey: 'AIzaSyCvCgJ_6zIO26m0tpbNAsoNWjing7ohWm0',
+    appId: '1:764795321038:web:635f07a08236cb9452ae9f',
+    messagingSenderId: '764795321038',
+    projectId: 'digitalmentalhealthapp',
   );
 }
